@@ -1,0 +1,126 @@
+.about-page {
+  background-color: var(--bg-light);
+}
+
+.about-section {
+  margin-bottom: 4rem;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  max-width: 900px;
+}
+
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+}
+
+.education-item {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 3px solid var(--primary-color);
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.education-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.education-period {
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.education-degree {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.education-details {
+  color: var(--text-light);
+}
+
+.roles-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.role-item h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.role-item p {
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.interests-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.interests-list li {
+  padding: 1rem;
+  background: white;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  color: var(--text-color);
+  position: relative;
+  padding-left: 2rem;
+}
+
+.interests-list li::before {
+  content: "→";
+  position: absolute;
+  left: 1rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .interests-list {
+    grid-template-columns: 1fr;
+  }
+}
+
