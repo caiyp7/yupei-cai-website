@@ -7,12 +7,21 @@
       // Single Page Apps for GitHub Pages
       // https://github.com/rafgraph/spa-github-pages
       var pathSegmentsToKeep = 1;
+      var repoName = 'yupei-cai-website';
 
       var l = window.location;
+      
+      // Check if we're on GitHub Pages (path includes repo name)
+      if (l.pathname.split('/')[1] === repoName) {
+        pathSegmentsToKeep = 1; // Keep '/yupei-cai-website'
+      }
+
+      var path = l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/');
+      var rest = l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~');
+      
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        path + '/?/' + rest +
         (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
         l.hash
       );
