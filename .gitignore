@@ -27,6 +27,5 @@ dist-ssr
 content/*.mp4
 content/*.mov
 public/robot_studio.mov
-public/pointcloud.mp4
-public/robot_studio.mp4
+# Note: public/pointcloud.mp4 and public/robot_studio.mp4 are now under 100MB and can be committed
 
