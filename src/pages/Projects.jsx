@@ -11,7 +11,7 @@ const Projects = () => {
         "Implemented simulation in PyBullet and used an evolution algorithm to optimize motor parameters.",
         "Applied crossover and mutation operations in the algorithm, with speed, distance, and stability as fitness scores for selection, and utilized parallel computation to reduce running time."
       ],
-      video: "/yupei-cai-website/robot_studio.mp4"
+      video: "https://cdn.jsdelivr.net/gh/caiyp7/yupei-cai-website@main/public/robot_studio.mp4"
     },
     {
       title: "Web-Integrated QGroundControl for UAV Point Cloud & Video",
@@ -24,7 +24,7 @@ const Projects = () => {
         "Embedded HTML + WebGL renderer to enable point cloud rotation, zooming, and trajectory display",
         "Adjusted QGC layout to display flight control data, video streams, and point clouds simultaneously"
       ],
-      video: "/yupei-cai-website/pointcloud.mp4"
+      video: "https://cdn.jsdelivr.net/gh/caiyp7/yupei-cai-website@main/public/pointcloud.mp4"
     }
   ]
 

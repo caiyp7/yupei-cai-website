@@ -10,8 +10,8 @@ const Publications = () => {
       status: "Under Review",
       description: "We use a 6-DoF biomechanical model and VR-based reaching tasks to quantify how unimpaired subjects coordinate posture across different targets, which can inform clinical postural training.",
       links: {
-        pdf: "/yupei-cai-website/Reaching_only_Characterization_TNSRE_Final_Submission.pdf",
-        video: "/yupei-cai-website/reaching.mp4"
+        pdf: "https://cdn.jsdelivr.net/gh/caiyp7/yupei-cai-website@main/public/Reaching_only_Characterization_TNSRE_Final_Submission.pdf",
+        video: "https://cdn.jsdelivr.net/gh/caiyp7/yupei-cai-website@main/public/reaching.mp4"
       }
     },
     {
@@ -22,8 +22,8 @@ const Publications = () => {
       status: "Under Review",
       description: "We coordinate pelvic and shank forces from a cable-driven parallel robot to provide squat assistance, and EMG results show how different strategies affect knee loading and ankle stability.",
       links: {
-        pdf: "/yupei-cai-website/Squatting_Multisegment_Assistance_Paper_IEEE.pdf",
-        video: "/yupei-cai-website/squatting.mp4"
+        pdf: "https://cdn.jsdelivr.net/gh/caiyp7/yupei-cai-website@main/public/Squatting_Multisegment_Assistance_Paper_IEEE.pdf",
+        video: "https://cdn.jsdelivr.net/gh/caiyp7/yupei-cai-website@main/public/squatting.mp4"
       }
     }
   ]
