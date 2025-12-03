@@ -19,7 +19,7 @@ const Home = () => {
             <div className="hero-buttons">
               <Link to="/projects" className="btn">View Projects</Link>
               <Link to="/publications" className="btn btn-outline">Publications</Link>
-              <a href="/CV_Yupei_Cai.pdf" className="btn btn-outline" target="_blank" rel="noopener noreferrer">View CV</a>
+              <a href="/yupei-cai-website/CV_Yupei_Cai.pdf" className="btn btn-outline" target="_blank" rel="noopener noreferrer">View CV</a>
             </div>
             <div className="hero-email">
               <a href="mailto:yc4363@columbia.edu">yc4363@columbia.edu</a>

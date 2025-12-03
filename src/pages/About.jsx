@@ -68,7 +68,7 @@ const About = () => {
                 publications, and professional experience.
               </p>
               <a 
-                href="/CV_Yupei_Cai.pdf" 
+                href="/yupei-cai-website/CV_Yupei_Cai.pdf" 
                 className="btn cv-download-btn" 
                 target="_blank"
                 rel="noopener noreferrer"
