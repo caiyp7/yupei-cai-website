@@ -63,20 +63,25 @@ const Projects = () => {
               </a>
             </div>
           ) : (
-            <video 
-              controls 
-              className="project-video-player"
-              preload="metadata"
-              playsInline
-            >
-              <source src={project.video} type="video/mp4" />
-              <div className="video-fallback">
-                <p>Your browser does not support video playback.</p>
-                <a href={project.video} className="project-link" download>
-                  📥 Download Video
-                </a>
-              </div>
-            </video>
+            <>
+              <video 
+                controls 
+                className="project-video-player"
+                preload="metadata"
+                playsInline
+              >
+                <source src={project.video} type="video/mp4" />
+                <div className="video-fallback">
+                  <p>Your browser does not support video playback.</p>
+                  <a href={project.video} className="project-link" download>
+                    📥 Download Video
+                  </a>
+                </div>
+              </video>
+              <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: '#666' }}>
+                Video may take a moment to load due to file size. If playback is slow, try downloading the video.
+              </p>
+            </>
           )}
         </div>
       )}

@@ -67,16 +67,44 @@ const Publications = () => {
 
                 <div className="publication-links">
                   {pub.links.pdf && (
-                    <a href={pub.links.pdf} className="pub-link" target="_blank" rel="noopener noreferrer">
+                    <a 
+                      href={pub.links.pdf} 
+                      className="pub-link" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
                       📄 PDF
                     </a>
                   )}
                   {pub.links.video && (
-                    <a href={pub.links.video} className="pub-link" target="_blank" rel="noopener noreferrer">
-                      🎥 Video
+                    <a 
+                      href={pub.links.video} 
+                      className="pub-link" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      🎥 Video (Open in new tab)
                     </a>
                   )}
                 </div>
+                {pub.links.video && (
+                  <div className="publication-video" style={{ marginTop: '1rem' }}>
+                    <h4 style={{ marginBottom: '0.5rem', fontSize: '1rem' }}>Video Preview:</h4>
+                    <video 
+                      controls 
+                      className="publication-video-player"
+                      preload="metadata"
+                      playsInline
+                      style={{ width: '100%', maxWidth: '600px', borderRadius: '8px' }}
+                    >
+                      <source src={pub.links.video} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                    <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: '#666' }}>
+                      Video may take a moment to load due to file size.
+                    </p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
