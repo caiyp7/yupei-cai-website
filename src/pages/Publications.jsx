@@ -11,7 +11,7 @@ const Publications = () => {
       description: "We use a 6-DoF biomechanical model and VR-based reaching tasks to quantify how unimpaired subjects coordinate posture across different targets, which can inform clinical postural training.",
       links: {
         pdf: "https://cdn.jsdelivr.net/gh/caiyp7/yupei-cai-website@main/public/Reaching_only_Characterization_TNSRE_Final_Submission.pdf",
-        video: "https://cdn.jsdelivr.net/gh/caiyp7/yupei-cai-website@main/public/reaching.mp4"
+        video: "https://youtu.be/krjQ4g-URy4"
       }
     },
     {
@@ -23,7 +23,7 @@ const Publications = () => {
       description: "We coordinate pelvic and shank forces from a cable-driven parallel robot to provide squat assistance, and EMG results show how different strategies affect knee loading and ankle stability.",
       links: {
         pdf: "https://cdn.jsdelivr.net/gh/caiyp7/yupei-cai-website@main/public/Squatting_Multisegment_Assistance_Paper_IEEE.pdf",
-        video: "https://cdn.jsdelivr.net/gh/caiyp7/yupei-cai-website@main/public/squatting.mp4"
+        video: "https://youtube.com/shorts/0BP6bu9ySdQ"
       }
     }
   ]
@@ -83,26 +83,50 @@ const Publications = () => {
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
-                      🎥 Video (Open in new tab)
+                      🎥 {pub.links.video.includes('youtu.be') || pub.links.video.includes('youtube.com') ? 'Watch on YouTube' : 'Video (Open in new tab)'}
                     </a>
                   )}
                 </div>
                 {pub.links.video && (
                   <div className="publication-video" style={{ marginTop: '1rem' }}>
                     <h4 style={{ marginBottom: '0.5rem', fontSize: '1rem' }}>Video Preview:</h4>
-                    <video 
-                      controls 
-                      className="publication-video-player"
-                      preload="metadata"
-                      playsInline
-                      style={{ width: '100%', maxWidth: '600px', borderRadius: '8px' }}
-                    >
-                      <source src={pub.links.video} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                    <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: '#666' }}>
-                      Video may take a moment to load due to file size.
-                    </p>
+                    {pub.links.video.includes('youtu.be') || pub.links.video.includes('youtube.com') ? (
+                      <div className="youtube-video-container">
+                        <iframe
+                          src={(() => {
+                            if (pub.links.video.includes('youtu.be')) {
+                              return `https://www.youtube.com/embed/${pub.links.video.split('/').pop()}`
+                            } else if (pub.links.video.includes('/shorts/')) {
+                              return `https://www.youtube.com/embed/${pub.links.video.split('/shorts/').pop()}`
+                            } else if (pub.links.video.includes('watch?v=')) {
+                              return pub.links.video.replace('watch?v=', 'embed/')
+                            } else {
+                              return pub.links.video.replace('youtube.com', 'youtube.com/embed')
+                            }
+                          })()}
+                          title="YouTube video player"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                    ) : (
+                      <>
+                        <video 
+                          controls 
+                          className="publication-video-player"
+                          preload="metadata"
+                          playsInline
+                          style={{ width: '100%', maxWidth: '600px', borderRadius: '8px' }}
+                        >
+                          <source src={pub.links.video} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                        <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: '#666' }}>
+                          Video may take a moment to load due to file size.
+                        </p>
+                      </>
+                    )}
                   </div>
                 )}
               </div>

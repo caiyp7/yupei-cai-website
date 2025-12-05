@@ -182,6 +182,25 @@
   font-size: 0.95rem;
 }
 
+.youtube-video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  background-color: #000;
+}
+
+.youtube-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
@@ -194,6 +213,10 @@
   .project-meta {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .youtube-video-container {
+    padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio on mobile */
   }
 }
 

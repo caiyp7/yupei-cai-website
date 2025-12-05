@@ -11,7 +11,7 @@ const Projects = () => {
         "Implemented simulation in PyBullet and used an evolution algorithm to optimize motor parameters.",
         "Applied crossover and mutation operations in the algorithm, with speed, distance, and stability as fitness scores for selection, and utilized parallel computation to reduce running time."
       ],
-      video: "https://cdn.jsdelivr.net/gh/caiyp7/yupei-cai-website@main/public/robot_studio.mp4"
+      video: "https://youtu.be/Ap7q0w-yRoo"
     },
     {
       title: "Web-Integrated QGroundControl for UAV Point Cloud & Video",
@@ -24,7 +24,7 @@ const Projects = () => {
         "Embedded HTML + WebGL renderer to enable point cloud rotation, zooming, and trajectory display",
         "Adjusted QGC layout to display flight control data, video streams, and point clouds simultaneously"
       ],
-      video: "https://cdn.jsdelivr.net/gh/caiyp7/yupei-cai-website@main/public/pointcloud.mp4"
+      video: "https://youtu.be/oJ4fbM_4nQA"
     }
   ]
 
@@ -53,7 +53,27 @@ const Projects = () => {
       {project.video && (
         <div className="project-video">
           <h4>Demo Video:</h4>
-          {project.video.endsWith('.mov') ? (
+          {project.video.includes('youtu.be') || project.video.includes('youtube.com') ? (
+            <div className="youtube-video-container">
+              <iframe
+                src={(() => {
+                  if (project.video.includes('youtu.be')) {
+                    return `https://www.youtube.com/embed/${project.video.split('/').pop()}`
+                  } else if (project.video.includes('/shorts/')) {
+                    return `https://www.youtube.com/embed/${project.video.split('/shorts/').pop()}`
+                  } else if (project.video.includes('watch?v=')) {
+                    return project.video.replace('watch?v=', 'embed/')
+                  } else {
+                    return project.video.replace('youtube.com', 'youtube.com/embed')
+                  }
+                })()}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          ) : project.video.endsWith('.mov') ? (
             <div className="video-download-box">
               <p className="video-download-text">
                 This video is in MOV format. Please download to view.
