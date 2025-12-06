@@ -75,7 +75,7 @@ const About = () => {
               >
                 📄 View CV
               </a>
-              <p className="cv-updated">Last updated: November 2024</p>
+              <p className="cv-updated">Last updated: November 2025</p>
             </div>
           </div>
 
