@@ -6,7 +6,6 @@ import Research from './pages/Research'
 import Publications from './pages/Publications'
 import Projects from './pages/Projects'
 import Teaching from './pages/Teaching'
-import Contact from './pages/Contact'
 import './styles/App.css'
 
 function App() {

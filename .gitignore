@@ -27,5 +27,11 @@ dist-ssr
 content/*.mp4
 content/*.mov
 public/robot_studio.mov
-# Note: public/pointcloud.mp4 and public/robot_studio.mp4 are now under 100MB and can be committed
+# Unused video files (replaced with YouTube links)
+public/pointcloud.mp4
+public/reaching.mp4
+public/robot_studio.mp4
+public/squatting.mp4
+# Original content files (duplicates of public/ files)
+content/
 

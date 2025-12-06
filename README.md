@@ -1,144 +1,128 @@
-# Yupei Cai - Personal Website
+# Yupei Cai - Personal Academic Website
 
-个人学术网站，展示研究、项目、论文成果和教学经历。
+Personal academic website showcasing research, projects, publications, and teaching experience.
 
-## 功能特性
+## Features
 
-- 🏠 **首页** - Hero区域、研究方向概览、最新亮点
-- 👤 **关于我** - 个人简介、教育背景、当前身份、研究兴趣
-- 🔬 **研究方向** - 详细的研究项目和成果
-- 📄 **论文成果** - 发表的论文列表和链接
-- 💼 **项目作品** - 机器人、UAV、其他工程项目
-- 📚 **教学** - 教学助理经历
-- 📧 **联系方式 & CV** - 联系信息和简历下载
+- 🏠 **Home** - Hero section, research & projects overview
+- 👤 **About** - Personal introduction, education background, research interests, and skills
+- 🔬 **Research Directions** - Detailed research projects and outcomes
+- 📄 **Publications** - Published papers with PDF links and video demos
+- 💼 **Projects** - Robotics and UAV projects with video demonstrations
+- 📚 **TA** - Teaching assistant experience
 
-## 技术栈
+## Tech Stack
 
 - React 18
 - React Router DOM 6
 - Vite
-- CSS3 (响应式设计)
+- CSS3 (Responsive Design)
 
-## 安装和运行
+## Installation & Development
 
-### 前置要求
+### Prerequisites
 
-- Node.js 16+ 
-- npm 或 yarn
+- Node.js 16+
+- npm or yarn
 
-### 安装依赖
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 开发模式
+### Development Mode
 
 ```bash
 npm run dev
 ```
 
-网站将在 `http://localhost:5173` 启动
+The website will be available at `http://localhost:5173`
 
-### 构建生产版本
+### Build for Production
 
 ```bash
 npm run build
 ```
 
-构建文件将生成在 `dist` 文件夹中
+Build files will be generated in the `dist` folder.
 
-### 预览生产构建
+### Preview Production Build
 
 ```bash
 npm run preview
 ```
 
-## 项目结构
+## Project Structure
 
 ```
 yupei-cai-website/
-├── public/           # 静态资源文件
+├── public/           # Static assets (PDFs, images)
 ├── src/
-│   ├── components/   # React组件
+│   ├── components/   # React components
 │   │   └── Navbar.jsx
-│   ├── pages/        # 页面组件
+│   ├── pages/        # Page components
 │   │   ├── Home.jsx
 │   │   ├── About.jsx
 │   │   ├── Research.jsx
 │   │   ├── Publications.jsx
 │   │   ├── Projects.jsx
-│   │   ├── Teaching.jsx
-│   │   └── Contact.jsx
-│   ├── styles/       # CSS样式文件
-│   ├── App.jsx       # 主应用组件
-│   └── main.jsx      # 入口文件
+│   │   └── Teaching.jsx
+│   ├── styles/       # CSS style files
+│   ├── App.jsx       # Main app component
+│   └── main.jsx      # Entry point
 ├── index.html
 ├── package.json
 ├── vite.config.js
 └── README.md
 ```
 
-## 自定义内容
+## Customization
 
-### 更新个人信息
+### Update Personal Information
 
-1. **About页面** (`src/pages/About.jsx`) - 修改教育背景、GPA、兴趣爱好等
-2. **Home页面** (`src/pages/Home.jsx`) - 更新Hero区域的简介文字
-3. **Contact页面** (`src/pages/Contact.jsx`) - 更新联系方式链接
+1. **About Page** (`src/pages/About.jsx`) - Modify education background, GPA, skills, etc.
+2. **Home Page** (`src/pages/Home.jsx`) - Update hero section introduction text
 
-### 添加论文
+### Add Publications
 
-编辑 `src/pages/Publications.jsx`，在 `publications` 数组中添加新的论文对象。
+Edit `src/pages/Publications.jsx`, add new publication objects to the `publications` array.
 
-### 添加项目
+### Add Projects
 
-编辑 `src/pages/Projects.jsx`，在对应的项目分类中添加新项目。
+Edit `src/pages/Projects.jsx`, add new projects to the `projects` array.
 
-### 更新简历
+### Update CV
 
-将CV PDF文件放置在 `public/` 文件夹中，并更新 `Contact.jsx` 中的文件路径。
+Place CV PDF file in the `public/` folder and update the link in `About.jsx` and `Home.jsx`.
 
-## 部署
+## Deployment
 
 ### GitHub Pages
 
-1. 安装 `gh-pages`:
+This project is automatically deployed to GitHub Pages via GitHub Actions.
+
+1. Push changes to the `main` branch
+2. GitHub Actions will automatically build and deploy to the `gh-pages` branch
+3. The website will be available at `https://caiyp7.github.io/yupei-cai-website`
+
+### Manual Deployment
+
+If you need to deploy manually:
+
 ```bash
-npm install --save-dev gh-pages
+npm run build
+npx gh-pages -d dist
 ```
 
-2. 在 `package.json` 中添加部署脚本:
-```json
-"scripts": {
-  "deploy": "npm run build && gh-pages -d dist"
-}
-```
+## Notes
 
-3. 运行部署:
-```bash
-npm run deploy
-```
+- All external links (GitHub, LinkedIn, etc.) should be updated with actual links
+- CV file should be placed in the `public/` folder
+- Publication PDF links should point to actual files or URLs
+- Video demos use YouTube embeds for better performance
+- Color theme can be adjusted by modifying CSS variables in `src/styles/index.css`
 
-### Vercel / Netlify
-
-1. 将代码推送到GitHub仓库
-2. 在 Vercel 或 Netlify 中导入项目
-3. 构建命令: `npm run build`
-4. 发布目录: `dist`
-
-## 注意事项
-
-- 确保所有外部链接（GitHub、LinkedIn等）都已更新为实际链接
-- 将CV文件放在 `public/` 文件夹中
-- 论文PDF链接需要指向实际的文件或URL
-- 可以根据需要调整颜色主题（修改 `src/styles/index.css` 中的CSS变量）
-
-## 许可证
+## License
 
 MIT License
-
-## 联系
-
-如有问题或建议，欢迎联系！
-
