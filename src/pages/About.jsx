@@ -64,7 +64,7 @@ const About = () => {
             <h2>Curriculum Vitae</h2>
             <div className="cv-card card">
               <p className="cv-description">
-                Download my latest CV to learn more about my education, research, 
+                View my latest CV to learn more about my education, research, 
                 publications, and professional experience.
               </p>
               <a 
@@ -73,7 +73,7 @@ const About = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                📄 View CV (PDF)
+                📄 View CV
               </a>
               <p className="cv-updated">Last updated: November 2024</p>
             </div>
