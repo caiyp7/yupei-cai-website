@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import '../styles/Publications.css'
 
 const Publications = () => {
@@ -68,17 +67,14 @@ const Publications = () => {
 
                 <div className="publication-links">
                   {pub.links.pdf && (
-                    <>
-                      <a 
-                        href={pub.links.pdf} 
-                        className="pub-link" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                      >
-                        📄 View PDF (New Tab)
-                      </a>
-                      <PDFPreviewComponent pdfUrl={pub.links.pdf} />
-                    </>
+                    <a 
+                      href={pub.links.pdf} 
+                      className="pub-link" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      📄 View PDF
+                    </a>
                   )}
                   {pub.links.video && (
                     <a 
@@ -141,39 +137,6 @@ const Publications = () => {
         </section>
       </div>
     </div>
-  )
-}
-
-const PDFPreviewComponent = ({ pdfUrl }) => {
-  const [showPreview, setShowPreview] = useState(false)
-
-  return (
-    <>
-      <button 
-        className="pub-link"
-        onClick={() => setShowPreview(!showPreview)}
-        style={{ cursor: 'pointer', border: 'none', fontFamily: 'inherit' }}
-      >
-        {showPreview ? '📕 Hide PDF Preview' : '📖 Show PDF Preview'}
-      </button>
-      {showPreview && (
-        <div className="publication-pdf-preview" style={{ marginTop: '1rem' }}>
-          <h4 style={{ marginBottom: '0.5rem', fontSize: '1rem' }}>PDF Preview:</h4>
-          <div className="pdf-container">
-            <iframe
-              src={`${pdfUrl}#toolbar=1&navpanes=1&scrollbar=1`}
-              className="pdf-iframe"
-              title="PDF Preview"
-              frameBorder="0"
-            ></iframe>
-            <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: '#666' }}>
-              PDF may take a moment to load. If it doesn't display,{' '}
-              <a href={pdfUrl} target="_blank" rel="noopener noreferrer">open in a new tab</a>.
-            </p>
-          </div>
-        </div>
-      )}
-    </>
   )
 }
 
